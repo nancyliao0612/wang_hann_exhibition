@@ -1,8 +1,8 @@
 import 'dart:html' as html;
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/app_ui/color/wang_hann_color.dart';
-import 'package:flutter_application_1/app_ui/typography/app_text_style.dart';
-import 'package:flutter_application_1/constant/icon_path.dart';
+import 'package:wang_hann_exhibition/app_ui/color/wang_hann_color.dart';
+import 'package:wang_hann_exhibition/app_ui/typography/app_text_style.dart';
+import 'package:wang_hann_exhibition/constant/icon_path.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 
@@ -25,13 +25,13 @@ class Footer extends StatelessWidget {
                 Text(
                   'Wanghann Healthcare Agency',
                   style: UITextStyle.title1.copyWith(
-                    color: Colors.white,
+                    color: WangHannColor.white,
                   ),
                 ),
                 Text(
                   '汪翰生醫策展',
                   style: UITextStyle.title1.copyWith(
-                    color: Colors.white.withOpacity(0.5),
+                    color: WangHannColor.white.withOpacity(0.5),
                   ),
                 ),
               ],
@@ -43,13 +43,13 @@ class Footer extends StatelessWidget {
                 Text(
                   'Wanghann Precision Medicine Co., Ltd. Taiwan',
                   style: UITextStyle.title1.copyWith(
-                    color: Colors.white,
+                    color: WangHannColor.white,
                   ),
                 ),
                 Text(
                   '汪翰精準生醫',
                   style: UITextStyle.title1.copyWith(
-                    color: Colors.white.withOpacity(0.5),
+                    color: WangHannColor.white.withOpacity(0.5),
                   ),
                 ),
               ],
@@ -94,11 +94,13 @@ class Footer extends StatelessWidget {
               children: [
                 Text(
                   '+886-932-842828',
-                  style: UITextStyle.caption.copyWith(color: Colors.white),
+                  style:
+                      UITextStyle.caption.copyWith(color: WangHannColor.white),
                 ),
                 Text(
                   'scott.li@wanghann.com',
-                  style: UITextStyle.caption.copyWith(color: Colors.white),
+                  style:
+                      UITextStyle.caption.copyWith(color: WangHannColor.white),
                 ),
               ],
             ),
@@ -110,18 +112,20 @@ class Footer extends StatelessWidget {
                 Text(
                   'Privacy Policy',
                   style: UITextStyle.caption.copyWith(
-                    color: Colors.white,
+                    color: WangHannColor.white,
                     decoration: TextDecoration.underline,
-                    decorationColor: Colors.white,
+                    decorationColor: WangHannColor.white,
                   ),
                 ),
                 Text(
                   ' ',
-                  style: UITextStyle.caption.copyWith(color: Colors.white),
+                  style:
+                      UITextStyle.caption.copyWith(color: WangHannColor.white),
                 ),
                 Text(
                   '© ${DateTime.now().year} Healthcare Agency. All rights reserved',
-                  style: UITextStyle.caption.copyWith(color: Colors.white),
+                  style:
+                      UITextStyle.caption.copyWith(color: WangHannColor.white),
                 ),
               ],
             )
