@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/presentation/service_page.dart';
-import 'package:flutter_application_1/presentation/what_they_say.dart';
+import 'package:wang_hann_exhibition/presentation/Portfolios/abbvie_portfolio.dart';
+import 'package:wang_hann_exhibition/presentation/Portfolios/merck_portfolio.dart';
+import 'package:wang_hann_exhibition/presentation/Portfolios/tsitc_portfolio.dart';
+import 'package:wang_hann_exhibition/presentation/Home/about_pgae.dart';
+import 'package:wang_hann_exhibition/presentation/Home/footer.dart';
+import 'package:wang_hann_exhibition/presentation/Home/portfolio_page.dart';
+import 'package:wang_hann_exhibition/presentation/Home/testimony_page.dart';
 import 'package:gap/gap.dart';
+import 'package:url_strategy/url_strategy.dart';
+
+import 'presentation/Home/service_page.dart';
 
 void main() {
+  // turn off the # in the URLs on the web
+  setPathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -15,6 +25,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const MyHomePage(title: 'Flutter Demo Home Page'),
+        '/TSITC': (context) => const TSITCPortfolio(),
+        '/AbbVie': (context) => const AbbViePortfolio(),
+        '/Merck': (context) => const MerckPortfolio(),
+      },
       theme: ThemeData(
           // This is the theme of your application.
           //
@@ -33,7 +50,7 @@ class MyApp extends StatelessWidget {
           // tested with just a hot reload.
           // useMaterial3: true,
           ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      // home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
 }
@@ -69,6 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
+
         title: Text(widget.title),
       ),
       body: const SingleChildScrollView(
@@ -90,7 +108,10 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             ServicePage(),
             Gap(10),
-            WhatTheySay(),
+            Testimony(),
+            PortfolioPage(),
+            AboutPage(),
+            Footer()
           ],
         ),
       ),
